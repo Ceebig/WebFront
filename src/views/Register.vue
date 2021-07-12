@@ -1,5 +1,19 @@
 <template>
   <div class="register">
-    <h1>This is register page</h1>
+    
+    This is register page
+    
   </div>
 </template>
+
+<script>
+// @ is an alias to /src
+//import GuestHeader from "@/components/GuestHeader.vue";
+
+export default {
+  name: "Register",
+  // components: {
+  //   GuestHeader,
+  // },
+};
+</script>
