@@ -1,7 +1,7 @@
 <template>
-        <router-view></router-view>
+  <router-view />
 </template>
 
 <style lang="scss">
-    @import "/nav.scss";
+	@import "assets/scss/app.scss";
 </style>
