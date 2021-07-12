@@ -1,0 +1,87 @@
+.login{
+	.screen-view{
+		height: 100vh; 
+		min-height: 100vh;
+	}
+
+	.bg-blue{
+		background-color: #2874ef;
+		h1{
+			font-size: 42px;
+			font-weight: 700;
+			color: #fff;
+		}
+		h3{
+			margin-top: 15px;
+			font-size: 16px;
+			color: #c5dbff;
+			line-height: 28px;
+			font-weight: 400;
+			
+			@include media($xld){
+				font-size: 18px;
+			}
+		}
+		.shopping-img{
+			padding-top: 60px;
+			text-align: center;
+			img{
+				width: 100%;
+				display: block;
+			}
+		}
+
+	}
+	
+	.space{
+		padding: 100px;
+	}
+	.start-form{
+		height: 100%;
+		padding-top: 60px;
+		.form{
+
+			&-action{
+				margin-top: 45px;
+			}
+			&-forget{
+				a{
+					font-size: 14px;
+					font-weight: 500;
+					font-style: italic;
+					color: #585858;
+					-webkit-transition: all .2s linear;
+					-moz-transition: all .2s linear;
+					-ms-transition: all .2s linear;
+					-o-transition: all .2s linear;
+					transition: all .2s linear;
+					&:hover{
+						color: #2874ef;
+					}
+				}
+			}
+		}
+		.direction-link{
+			margin-top: 35px;
+			p{
+				text-align: center;
+				font-size: 14px;
+				font-weight: 500;
+				font-family: $font-1;
+				margin-bottom: 0px;
+				a{
+					color: #2874ef;
+					-webkit-transition: all .2s linear;
+					-moz-transition: all .2s linear;
+					-ms-transition: all .2s linear;
+					-o-transition: all .2s linear;
+					transition: all .2s linear;
+					&:hover{
+						color: #f7921e;
+					}
+
+				}
+			}
+		}
+	}
+}
