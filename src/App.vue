@@ -1,32 +1,11 @@
 <template>
-    <div id="app">
-        <loader-component v-if="displayLoader"/>
-
-        <notifications group="notify" class="notify"/>
-
-        <router-view/>
-    </div>
+  <div id="nav">
+    <router-link to="/">Login</router-link> |
+    <router-link to="/register">Register</router-link>
+  </div>
+  <router-view />
 </template>
 
-<script>
-import loaderComponent from '@/components/LoaderComponent'
-import { mapGetters } from 'vuex'
-
-export default {
-    name: 'App',
-    components: {
-        loaderComponent
-    },
-    computed: {
-        ...mapGetters({
-            displayLoader: 'getDisplayLoader'
-        })
-    },
-    metaInfo () {
-        return {
-            title: this.$appName,
-            titleTemplate: `%s - ` + this.$appName
-        }
-    },
-}
-</script>
+<style lang="scss">
+@import "nav.scss";
+</style>
