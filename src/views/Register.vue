@@ -25,12 +25,36 @@
 								<div class="start-form d-flex flex-wrap align-items-center">
 									<form action="" class="w-100">
 										<div class="form-group">
+											<label for="" class="form-label">Username</label>
+											<input type="text" class="form-control" placeholder="Example@mail.com">
+											<span class="error-label"></span>
+										</div>
+										<div class="form-group">
 											<label for="" class="form-label">Email</label>
 											<input type="text" class="form-control" placeholder="Example@mail.com">
 											<span class="error-label"></span>
 										</div>
 										<div class="form-group">
+											<label for="" class="form-label">Phone</label>
+											<div class="input-group-prepend">
+												<select name="" id="" class="form-control">
+													<option value="">+91</option>
+													<option value="">+63</option>
+												</select>
+												<input type="text" class="form-control" placeholder="Example@mail.com">
+											</div>
+											<span class="error-label"></span>
+										</div>
+										<div class="form-group">
 											<label for="" class="form-label">Password</label>
+											<div class="icon_wrap">
+												<input type="text" class="form-control" placeholder="Enter Password">
+												<i data-feather="eye"></i>
+											</div>
+											<span class="error-label"></span>
+										</div>
+										<div class="form-group">
+											<label for="" class="form-label">Confirm Password</label>
 											<div class="icon_wrap">
 												<input type="text" class="form-control" placeholder="Enter Password">
 												<i data-feather="eye"></i>

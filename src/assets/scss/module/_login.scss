@@ -6,6 +6,10 @@
 
 	.bg-blue{
 		background-color: #2874ef;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		max-width: 590px;
 		h1{
 			font-size: 42px;
 			font-weight: 700;
@@ -36,31 +40,49 @@
 	.space{
 		padding: 100px;
 	}
-	.start-form{
-		height: 100%;
-		padding-top: 60px;
-		.form{
-
-			&-action{
-				margin-top: 45px;
-			}
-			&-forget{
-				a{
-					font-size: 14px;
-					font-weight: 500;
-					font-style: italic;
-					color: #585858;
-					-webkit-transition: all .2s linear;
-					-moz-transition: all .2s linear;
-					-ms-transition: all .2s linear;
-					-o-transition: all .2s linear;
-					transition: all .2s linear;
-					&:hover{
-						color: #2874ef;
-					}
+	.form{
+		&-container{
+			padding-left: 590px;
+			padding-top: 115px;
+		}
+		&-wrap{
+			min-height: calc(100vh - 115px);
+		}
+		&-action{
+			margin-top: 45px;
+		}
+		&-forget{
+			a{
+				font-size: 14px;
+				font-weight: 500;
+				font-style: italic;
+				color: #585858;
+				-webkit-transition: all .2s linear;
+				-moz-transition: all .2s linear;
+				-ms-transition: all .2s linear;
+				-o-transition: all .2s linear;
+				transition: all .2s linear;
+				&:hover{
+					color: #2874ef;
 				}
 			}
 		}
+		
+	}
+	.logo-header{
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		padding-left: 590px;
+		.logo-wrap{
+			padding: 60px;
+			padding-bottom: 0px;
+		}
+	}
+	.start-form{
+		height: 100%;
+		padding-top: 60px;
 		.direction-link{
 			margin-top: 35px;
 			p{
@@ -83,5 +105,6 @@
 				}
 			}
 		}
+		
 	}
 }
