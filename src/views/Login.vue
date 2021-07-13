@@ -23,25 +23,31 @@
 						<div class="row justify-content-center h-100">
 							<div class="col-xl-7 h-100">
 								<div class="start-form d-flex flex-wrap align-items-center">
-									<form action="" class="w-100">
-										<div class="form-group">
+									<form autocomplete="off" method="POST" @submit.prevent="login" class="w-100">
+										<div class="form-group" :class="{ 'form-group--error': $v.email.$error }">
 											<label for="" class="form-label">Email</label>
-											<input type="text" class="form-control" placeholder="Example@mail.com">
-											<span class="error-label"></span>
+											<input type="text" class="form-control" placeholder="Example@mail.com" name="email" v-model.trim="$v.email.$model">
+											<div v-if="submitted && $v.email.$error" class="invalid-feedback">
+                            <span v-if="!$v.email.required" class="error-label">Email is required</span>
+                            <span v-if="!$v.email.email" class="error-label">Email is invalid</span>
+                      </div>
 										</div>
-										<div class="form-group">
+										<div class="form-group" :class="{ 'form-group--error': $v.password.$error }">
 											<label for="" class="form-label">Password</label>
 											<div class="icon_wrap">
-												<input type="text" class="form-control" placeholder="Enter Password">
+												<input type="password" class="form-control" placeholder="Enter Password" name="password" v-model.trim="$v.password.$model">
 												<i data-feather="eye"></i>
 											</div>
-											<span class="error-label"></span>
+                      <div v-if="submitted && $v.password.$error" class="invalid-feedback">
+                          <span v-if="!$v.password.required" class="error-label">password is required</span>
+                          <span v-if="!$v.password.minLength" class="error-label">password length should be equal or greater than 8</span>
+                      </div>
 										</div>
 										<div class="form-forget">
 											<a href="">Forget Password?</a>
 										</div>
 										<div class="form-action">
-											<button class="btn btn-primary">Login</button>
+											<button class="btn btn-primary" type="submit">Login <img src="../assets/images/loader.gif" alt="popup_logo" class="sbmt_loader" v-if="loader"></button>
 										</div>
 										<div class="direction-link">
 											<p>New to Ceebig? <a href="">Create an Account</a></p>
@@ -57,13 +63,54 @@
 	</div>
 </template>
 <script>
-// @ is an alias to /src
-//import HelloWorld from "@/components/HelloWorld.vue";
-
+import { required,email, minLength } from 'vuelidate/lib/validators';
+import axios from "axios";
 export default {
   name: "Login",
-  // components: {
-  //   HelloWorld,
-  // },
+  data(){
+          return {
+            loader: false,
+            'email':null,
+            'password':null,
+            'submitted':false,
+             response_errors: null,
+          }
+      },
+  validations: {
+            email: {
+                required,
+                email
+            },
+            password: {
+                required,
+                minLength: minLength(8)
+            }
+    },
+    methods:{
+            login() {
+                this.loader= true;
+                this.submitted = true;
+                let currentObj = this;
+                this.$v.$touch();           
+                // if (this.$v.$invalid) {
+                //     this.loader= false;
+                //     return;
+                // }
+                // else{
+                    axios.post('/api/login', {
+                        email: this.email,
+                        password: this.password
+                    })
+                    .then(()=> {
+                      currentObj.loader= false;
+                      
+                    })
+                    .catch(function () {
+                        
+                          currentObj.loader= false;
+                    });
+                // }
+            },
+        }
 };
 </script>
