@@ -17,8 +17,8 @@
 			</div>
 		</div>
 		<div class="form-container">
-			<div class="form-wrap space">
-				<div class="row justify-content-center h-100">
+			<div class="form-wrap space d-flex align-items-center justify-content-center">
+				<div class="row justify-content-center w-100 h-100">
 					<div class="col-xl-7 h-100">
 						<div class="start-form d-flex flex-wrap align-items-center">
 							<form action="" class="w-100">
