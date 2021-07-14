@@ -3,7 +3,6 @@ import Login from "../views/Login.vue";
 import Home from "../views/Home.vue";
 import Guest from "../Guest.vue";
 import Auth from "../Auth.vue";
-// import Auth from "../Auth.vue";
 
 const routes = [
   {

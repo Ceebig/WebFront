@@ -1,12 +1,16 @@
-window.Vue = require('vue');
-// import Vue from 'vue';
-import { createApp } from "vue";
+
+import { createApp } from 'vue';
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-// import Vuelidate from 'vuelidate';
-// Vue.use(Vuelidate)
+// import useValidate from "@vuelidate/core";
+const app = createApp(App);
+// import Vue from 'vue';
+// import { useVuelidate } from '@vuelidate/core'
+
+// app.use(useVuelidate)
 // import axios from "axios";
+
 // // const axios = require('axios').default;
 
 // axios.interceptors.request.use(
@@ -21,5 +25,10 @@ import store from "./store";
 //       return Promise.reject(error);
 //     }
 //   );
+app.use(store)
+app.use(router)
+// app.use(useValidate)
 
-createApp(App).use(store).use(router).mount("#app");
+app.mount("#app")
+
+//createApp(App).use(store).use(router).mount("#app");
